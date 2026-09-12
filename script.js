@@ -4,19 +4,34 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 });
 
-// ===== Mobile nav toggle =====
+// ===== Mobile nav toggle (dynamic-island panel expands below the pill) =====
 const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+const navMobilePanel = document.getElementById('navMobilePanel');
 navToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.toggle('open');
+  const isOpen = navMobilePanel.classList.toggle('open');
   navToggle.setAttribute('aria-expanded', isOpen);
+  navToggle.classList.toggle('is-active', isOpen);
 });
-navLinks.querySelectorAll('a').forEach(link => {
+navMobilePanel.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
+    navMobilePanel.classList.remove('open');
     navToggle.setAttribute('aria-expanded', false);
+    navToggle.classList.remove('is-active');
   });
 });
+
+// ===== Desktop nav: sliding pill indicator follows the hovered link =====
+const navLinksEl = document.getElementById('navLinks');
+const navIndicator = document.getElementById('navIndicator');
+if (navLinksEl && navIndicator) {
+  const links = navLinksEl.querySelectorAll('.nav-link');
+  links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      navIndicator.style.width = link.offsetWidth + 'px';
+      navIndicator.style.transform = `translateX(${link.offsetLeft}px)`;
+    });
+  });
+}
 
 // ===== Footer year =====
 document.getElementById('year').textContent = new Date().getFullYear();
