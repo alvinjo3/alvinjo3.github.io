@@ -35,7 +35,7 @@ if (!reduceMotion && hasHover) {
   }, { passive: true });
 }
 
-// ===== Card tilt on mouse move =====
+// ===== Card tilt + local spotlight on mouse move =====
 if (!reduceMotion && hasHover) {
   const tiltCards = document.querySelectorAll('.tilt-card');
   tiltCards.forEach(card => {
@@ -46,15 +46,29 @@ if (!reduceMotion && hasHover) {
       const y = e.clientY - rect.top;
       const cx = rect.width / 2;
       const cy = rect.height / 2;
-      const rotateY = ((x - cx) / cx) * 5;
-      const rotateX = -((y - cy) / cy) * 5;
+      const rotateY = ((x - cx) / cx) * 6;
+      const rotateX = -((y - cy) / cy) * 6;
       if (raf) cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+        card.style.transform = `perspective(700px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-3px) scale(1.01)`;
+        card.style.setProperty('--lx', x + 'px');
+        card.style.setProperty('--ly', y + 'px');
       });
     });
     card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(700px) rotateX(0) rotateY(0) translateY(0)';
+      card.style.transform = 'perspective(700px) rotateX(0) rotateY(0) translateY(0) scale(1)';
+    });
+  });
+}
+
+// ===== Subtle glow-follow on buttons and skill chips =====
+if (!reduceMotion && hasHover) {
+  const glowTargets = document.querySelectorAll('.btn, .skill-chip, .contact-link');
+  glowTargets.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      el.style.setProperty('--lx', (e.clientX - rect.left) + 'px');
+      el.style.setProperty('--ly', (e.clientY - rect.top) + 'px');
     });
   });
 }
