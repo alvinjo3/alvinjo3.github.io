@@ -58,9 +58,9 @@ const termLines = [
   { text: "whoami", type: "prompt" },
   { text: "alvin.bridson — cybersecurity, ai & grc", type: "" },
   { text: "role --current", type: "prompt" },
-  { text: "cybersecurity consultant @ intello protect", type: "" },
+  { text: "cybersecurity consultant @ intello protect technology llc", type: "" },
   { text: "interests --list", type: "prompt" },
-  { text: "offensive security · grc & compliance · web3 security", type: "" },
+  { text: "offensive security · grc & compliance · applied ai", type: "" },
   { text: "status", type: "prompt" },
   { text: "available for opportunities", type: "ok" },
 ];
