@@ -260,6 +260,13 @@ ul{margin:0;padding:0;list-style:none;}
 .honor-meta{ color:var(--midgrey); font-size:13.5px; }
 
 /* Experience path */
+.company-head{
+  display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  margin-bottom:34px; padding-bottom:22px; border-bottom:1px solid var(--border);
+}
+.company-head h3{ font-size:1.55rem; }
+.company-tenure{ color:var(--midgrey); font-size:14px; }
+
 .exp-path{ position:relative; padding-left:70px; margin-top:8px; }
 .exp-path::before{ content:''; position:absolute; left:24px; top:10px; bottom:10px; width:1px; background:var(--border); }
 .exp-item{ position:relative; padding-bottom:44px; }
