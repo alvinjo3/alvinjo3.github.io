@@ -134,9 +134,17 @@ ul{margin:0;padding:0;list-style:none;}
 }
 .hero-actions{ display:flex; gap:14px; margin-top:34px; }
 .btn{
+  position:relative; overflow:hidden;
   padding:13px 24px; font-size:14px; border-radius:2px; display:inline-block;
   transition:all .25s ease; border:1px solid var(--border);
 }
+.btn::before{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(140px circle at var(--lx,50%) var(--ly,50%), rgba(127,176,179,0.35), transparent 70%);
+  opacity:0; transition:opacity .3s ease;
+}
+.btn:hover::before{ opacity:1; }
+.btn span, .btn{ z-index:1; }
 .btn-solid{ background:var(--white); color:var(--black); border-color:var(--white); font-weight:500;}
 .btn-solid:hover{ background:var(--accent); border-color:var(--accent); color:#08201f; }
 .btn-ghost{ color:var(--white); }
@@ -171,12 +179,25 @@ ul{margin:0;padding:0;list-style:none;}
 /* Cursor-reactive glow */
 .cursor-glow{
   position:fixed; inset:0; z-index:1; pointer-events:none;
-  background:radial-gradient(600px circle at var(--mx,50%) var(--my,20%), rgba(127,176,179,0.10), transparent 60%);
-  transition:background .08s linear;
+  background:radial-gradient(900px circle at var(--mx,50%) var(--my,20%), rgba(127,176,179,0.22), rgba(127,176,179,0.06) 35%, transparent 65%);
+  transition:background .05s linear;
 }
 
-/* Tilt cards */
-.tilt-card{ transform-style:preserve-3d; will-change:transform; transition:transform .15s ease-out, border-color .3s ease; }
+/* Tilt cards with a localized cursor spotlight */
+.tilt-card{
+  position:relative; overflow:hidden;
+  transform-style:preserve-3d; will-change:transform;
+  transition:transform .12s ease-out, border-color .3s ease, box-shadow .3s ease;
+}
+.tilt-card::before{
+  content:'';
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:radial-gradient(220px circle at var(--lx,50%) var(--ly,50%), rgba(127,176,179,0.28), transparent 70%);
+  opacity:0; transition:opacity .35s ease;
+}
+.tilt-card:hover::before{ opacity:1; }
+.tilt-card:hover{ box-shadow:0 20px 45px -20px rgba(0,0,0,0.55); }
+.tilt-card > *{ position:relative; z-index:1; }
 
 .code-inline{
   font-family:var(--mono); font-size:0.88em; color:var(--accent);
@@ -184,16 +205,15 @@ ul{margin:0;padding:0;list-style:none;}
 }
 
 /* Honors */
-.honors{ margin-top:52px; padding-top:36px; border-top:1px solid var(--border); }
-.honors-label{ color:var(--steel); font-size:12.5px; margin-bottom:18px; }
-.honors-row{ display:flex; flex-wrap:wrap; gap:14px; }
+.honors-row{ display:flex; flex-wrap:wrap; gap:16px; margin-top:36px; }
 .honor-chip{
-  border:1px solid var(--border); border-radius:6px; padding:16px 20px; background:var(--panel);
-  transition:border-color .3s ease;
+  border:1px solid var(--border); border-radius:6px; padding:22px 26px; background:var(--panel);
+  transition:border-color .3s ease, transform .2s ease;
+  flex:1 1 220px;
 }
-.honor-chip:hover{ border-color:var(--accent-line); }
-.honor-title{ color:var(--white); font-size:14.5px; font-weight:500; margin-bottom:4px; }
-.honor-meta{ color:var(--midgrey); font-size:12px; }
+.honor-chip:hover{ border-color:var(--accent-line); transform:translateY(-3px); }
+.honor-title{ color:var(--white); font-size:16px; font-weight:500; margin-bottom:6px; font-family:var(--serif-display); }
+.honor-meta{ color:var(--midgrey); font-size:12.5px; }
 
 /* About */
 .about-grid{ display:grid; grid-template-columns:1.5fr 1fr; gap:50px; align-items:center; margin-top:40px; }
@@ -204,10 +224,17 @@ ul{margin:0;padding:0;list-style:none;}
 .node-dot{ fill:var(--steel); }
 .skills-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:44px; }
 .skill-chip{
+  position:relative; overflow:hidden;
   font-family:var(--mono); font-size:12.5px; color:var(--lightgrey);
   border:1px solid var(--border); padding:8px 14px; border-radius:20px;
   transition:border-color .25s ease, color .25s ease;
 }
+.skill-chip::before{
+  content:''; position:absolute; inset:0; pointer-events:none; border-radius:20px;
+  background:radial-gradient(80px circle at var(--lx,50%) var(--ly,50%), rgba(127,176,179,0.3), transparent 70%);
+  opacity:0; transition:opacity .3s ease;
+}
+.skill-chip:hover::before{ opacity:1; }
 .skill-chip:hover{ border-color:var(--accent-line); color:var(--accent); }
 
 /* Timeline (Education) */
@@ -280,11 +307,19 @@ ul{margin:0;padding:0;list-style:none;}
 .contact-lead{ font-size:1.15rem; color:var(--lightgrey); max-width:50ch; margin-top:20px; font-family:var(--serif-display); }
 .contact-grid{ display:flex; flex-direction:column; margin-top:44px; border-top:1px solid var(--border); }
 .contact-link{
+  position:relative; overflow:hidden;
   display:flex; justify-content:space-between; align-items:center;
   padding:22px 4px; border-bottom:1px solid var(--border);
   transition:padding-left .25s ease, color .25s ease;
 }
+.contact-link::before{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(180px circle at var(--lx,50%) var(--ly,50%), rgba(127,176,179,0.14), transparent 70%);
+  opacity:0; transition:opacity .3s ease;
+}
+.contact-link:hover::before{ opacity:1; }
 .contact-link:hover{ padding-left:12px; color:var(--accent); }
+.contact-link > *{ position:relative; z-index:1; }
 .contact-label{ color:var(--steel); font-size:13px; }
 .contact-value{ font-size:1.05rem; font-family:var(--serif-display); }
 
