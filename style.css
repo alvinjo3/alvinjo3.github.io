@@ -129,7 +129,10 @@ ul{margin:0;padding:0;list-style:none;}
 
 .term{ background:var(--black-2); border:1px solid var(--d-border); border-radius:6px; overflow:hidden; box-shadow:0 30px 60px -25px rgba(0,0,0,.7); }
 .term-head{ display:flex; gap:7px; padding:12px 14px; border-bottom:1px solid var(--d-border); }
-.term-head span{ width:10px; height:10px; border-radius:50%; background:var(--d-faint); }
+.term-head span{ width:11px; height:11px; border-radius:50%; }
+.term-head span:nth-child(1){ background:#ff5f56; }
+.term-head span:nth-child(2){ background:#ffbd2e; }
+.term-head span:nth-child(3){ background:#27c93f; }
 .term-body{ padding:20px; font-size:13px; color:var(--d-soft); min-height:180px; line-height:1.8; }
 .term-body .line{ display:block; }
 .term-body .ok{ color:var(--red); }
