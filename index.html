@@ -16,19 +16,36 @@
 <div class="scanline"></div>
 
 <nav id="nav">
-  <div class="nav-inner">
+  <div class="nav-pill" id="navPill">
     <a href="#top" class="nav-mark">alvinjoe<span class="cursor">_</span></a>
+    <ul class="nav-links" id="navLinks">
+      <span class="nav-indicator" id="navIndicator"></span>
+      <li><a href="#about" class="nav-link">about</a></li>
+      <li><a href="#education" class="nav-link">education</a></li>
+      <li><a href="#experience" class="nav-link">experience</a></li>
+      <li><a href="#projects" class="nav-link">projects</a></li>
+      <li><a href="#certs" class="nav-link">certifications</a></li>
+      <li><a href="#contact" class="nav-link">contact</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text mono">Available</span>
+    </div>
     <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#about">about</a></li>
-      <li><a href="#education">education</a></li>
-      <li><a href="#experience">experience</a></li>
-      <li><a href="#projects">projects</a></li>
-      <li><a href="#certs">certifications</a></li>
-      <li><a href="#contact">contact</a></li>
-    </ul>
+  </div>
+  <div class="nav-mobile-panel" id="navMobilePanel">
+    <a href="#about">about</a>
+    <a href="#education">education</a>
+    <a href="#experience">experience</a>
+    <a href="#projects">projects</a>
+    <a href="#certs">certifications</a>
+    <a href="#contact">contact</a>
+    <div class="nav-mobile-status">
+      <span class="status-dot"></span>
+      <span class="status-text mono">Available for opportunities</span>
+    </div>
   </div>
 </nav>
 
