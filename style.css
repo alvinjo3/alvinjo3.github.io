@@ -180,10 +180,12 @@ ul{margin:0;padding:0;list-style:none;}
 }
 #honors .section-head .tag{ color:var(--white); }
 .honors-row{ display:flex; flex-wrap:wrap; gap:16px; margin-top:32px; }
-.honor-chip{ flex:1 1 220px; border:1px solid rgba(246,246,247,0.22); border-radius:6px; padding:22px 26px; background:rgba(255,255,255,0.06); transition:border-color .2s ease, transform .2s ease, background .2s ease; }
+.honor-chip{ flex:1 1 300px; border:1px solid rgba(246,246,247,0.22); border-radius:6px; padding:24px 28px; background:rgba(255,255,255,0.06); transition:border-color .2s ease, transform .2s ease, background .2s ease; }
 .honor-chip:hover{ border-color:var(--white); background:rgba(255,255,255,0.1); transform:translateY(-3px); }
-.honor-title{ color:var(--d-strong); font-size:17px; font-weight:500; margin-bottom:6px; font-family:var(--serif); }
-.honor-meta{ color:rgba(246,246,247,0.72); font-size:13.5px; }
+.honor-title{ color:var(--d-strong); font-size:18px; font-weight:600; margin-bottom:2px; font-family:var(--serif); }
+.honor-dept{ color:var(--d-strong); font-size:14.5px; margin-bottom:4px; }
+.honor-meta{ color:rgba(246,246,247,0.72); font-size:13px; margin-bottom:12px; }
+.honor-desc{ color:rgba(246,246,247,0.82); font-size:14.5px; line-height:1.55; }
 
 /* ===== Experience ===== */
 .company-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:34px; padding-bottom:22px; border-bottom:1px solid var(--d-border); }
@@ -199,8 +201,8 @@ ul{margin:0;padding:0;list-style:none;}
 .exp-content h3{ font-size:1.45rem; margin:4px 0 2px; }
 .exp-content .timeline-org{ margin-bottom:12px; font-size:15px; }
 .exp-content ul{ display:flex; flex-direction:column; gap:9px; }
-.exp-content li{ position:relative; padding-left:18px; color:var(--d-strong); font-size:17px; max-width:68ch; }
-.exp-content li::before{ content:'—'; position:absolute; left:0; color:var(--red); }
+.exp-content li{ position:relative; padding-left:22px; color:var(--d-strong); font-size:17px; max-width:68ch; }
+.exp-content li::before{ content:''; position:absolute; left:0; top:0.62em; width:6px; height:6px; border-radius:50%; background:var(--red); }
 
 /* ===== Projects — ALL cards identical for uniformity ===== */
 .project-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:32px; }
