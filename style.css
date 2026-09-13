@@ -172,6 +172,8 @@ ul{margin:0;padding:0;list-style:none;}
 .timeline-org{ color:var(--d-soft); font-size:15px; margin-bottom:10px; }
 .timeline-desc{ color:var(--d-strong); max-width:64ch; font-size:17.5px; }
 .timeline-desc em{ color:var(--red); font-style:normal; }
+#education .timeline-desc em{ color:var(--d-strong); }
+#education .timeline-date, #education .timeline-org{ color:var(--d-strong); }
 
 /* ===== Honors — bold red band, black→red→black ===== */
 #honors{
