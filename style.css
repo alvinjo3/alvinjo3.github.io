@@ -167,8 +167,8 @@ ul{margin:0;padding:0;list-style:none;}
 .timeline-item:last-child{ padding-bottom:0; }
 .timeline-dot{ position:absolute; left:-30px; top:5px; width:11px; height:11px; border-radius:50%; background:var(--black); border:2px solid var(--red); transition:transform .25s ease, box-shadow .25s ease; }
 .timeline-item:hover .timeline-dot{ transform:scale(1.3); box-shadow:0 0 0 5px var(--red-dim); }
-.timeline-date{ color:var(--red); font-size:12.5px; margin-bottom:6px; }
-.timeline-content h3{ font-size:1.4rem; margin-bottom:5px; }
+.timeline-date{ color:var(--d-soft); font-size:12.5px; margin-bottom:6px; }
+.timeline-content h3{ font-size:1.4rem; margin-bottom:5px; color:var(--red); }
 .timeline-org{ color:var(--d-soft); font-size:15px; margin-bottom:10px; }
 .timeline-desc{ color:var(--d-strong); max-width:64ch; font-size:17.5px; }
 .timeline-desc em{ color:var(--red); font-style:normal; }
@@ -190,7 +190,7 @@ ul{margin:0;padding:0;list-style:none;}
 /* ===== Experience ===== */
 .company-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:34px; padding-bottom:22px; border-bottom:1px solid var(--d-border); }
 .company-head h3{ font-size:1.55rem; }
-.company-tenure{ color:var(--red); font-size:14px; }
+.company-tenure{ color:var(--d-soft); font-size:14px; }
 .exp-path{ position:relative; padding-left:70px; margin-top:8px; }
 .exp-path::before{ content:''; position:absolute; left:24px; top:10px; bottom:10px; width:1px; background:var(--d-border); }
 .exp-item{ position:relative; padding-bottom:44px; }
@@ -198,7 +198,7 @@ ul{margin:0;padding:0;list-style:none;}
 .exp-marker{ position:absolute; left:-70px; top:0; width:50px; height:50px; border-radius:50%; background:var(--black-2); border:1px solid var(--d-border); display:flex; align-items:center; justify-content:center; transition:border-color .25s ease; }
 .exp-item:hover .exp-marker{ border-color:var(--red-line); }
 .exp-num{ font-family:var(--mono); color:var(--red); font-size:13px; }
-.exp-content h3{ font-size:1.45rem; margin:4px 0 2px; }
+.exp-content h3{ font-size:1.45rem; margin:4px 0 2px; color:var(--red); }
 .exp-content .timeline-org{ margin-bottom:12px; font-size:15px; }
 .exp-content ul{ display:flex; flex-direction:column; gap:9px; }
 .exp-content li{ position:relative; padding-left:22px; color:var(--d-strong); font-size:17px; max-width:68ch; }
