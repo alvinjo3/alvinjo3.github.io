@@ -207,9 +207,9 @@ ul{margin:0;padding:0;list-style:none;}
 .section.glow-grid::after{
   content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
   background:
-    radial-gradient(700px 500px at 50% 0%, rgba(223,37,49,0.16), transparent 70%),
-    radial-gradient(600px 500px at 85% 55%, rgba(223,37,49,0.10), transparent 70%),
-    radial-gradient(600px 500px at 15% 100%, rgba(223,37,49,0.10), transparent 70%);
+    radial-gradient(90% 42% at 50% 0%, rgba(223,37,49,0.17), transparent 72%),
+    radial-gradient(80% 45% at 10% 48%, rgba(223,37,49,0.12), transparent 72%),
+    radial-gradient(80% 45% at 90% 85%, rgba(223,37,49,0.12), transparent 72%);
 }
 
 /* ===== About — subtle red fade in from the top ===== */
