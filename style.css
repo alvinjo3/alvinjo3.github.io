@@ -212,6 +212,36 @@ ul{margin:0;padding:0;list-style:none;}
     radial-gradient(80% 45% at 90% 85%, rgba(223,37,49,0.12), transparent 72%);
 }
 
+/* ===== About — decorative curvy blobs & lines (right side, behind content) ===== */
+.about-decor{ overflow:hidden; }
+.about-blobs{
+  position:absolute; top:50%; right:-60px; transform:translateY(-50%);
+  width:min(620px, 55%); height:120%; z-index:0; pointer-events:none;
+  opacity:0.9;
+}
+.about-blobs .blob-line{
+  fill:none; stroke-width:1.6; stroke-linecap:round;
+}
+.about-blobs .blob-l1{ stroke:rgba(223,37,49,0.55); }
+.about-blobs .blob-l2{ stroke:rgba(255,255,255,0.14); }
+.about-blobs .blob-fill{ opacity:0.5; }
+.about-blobs .blob-f1{ fill:rgba(223,37,49,0.10); }
+.about-blobs .blob-dot{ fill:rgba(223,37,49,0.7); }
+@media (prefers-reduced-motion: no-preference){
+  .about-blobs .blob-f1{ animation:blobFloat 16s ease-in-out infinite alternate; transform-origin:center; }
+  .about-blobs .blob-l1{ animation:blobFloat 20s ease-in-out infinite alternate-reverse; transform-origin:center; }
+}
+@keyframes blobFloat{
+  0%{ transform:translate(0,0) scale(1) rotate(0deg); }
+  100%{ transform:translate(-14px,18px) scale(1.06) rotate(4deg); }
+}
+/* fade the whole decoration out on the left so it never reaches the text column */
+.about-decor::before{
+  content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(90deg, var(--black) 8%, transparent 42%);
+}
+.about-decor .section-inner{ z-index:2; }
+
 /* ===== About — subtle red fade in from the top ===== */
 #about{
   background:var(--black);
@@ -335,4 +365,7 @@ ul{margin:0;padding:0;list-style:none;}
   .exp-path{ padding-left:54px; }
   .exp-marker{ left:-54px; width:40px; height:40px; }
   .cert-grid{ grid-template-columns:1fr; }
+  /* on mobile the text is full-width — shrink the blobs to the top corner & dim them so they never sit behind copy */
+  .about-blobs{ width:70%; height:auto; top:0; right:-40px; transform:none; opacity:0.4; }
+  .about-decor::before{ background:linear-gradient(180deg, transparent 0%, var(--black) 30%); }
 }
