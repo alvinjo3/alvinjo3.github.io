@@ -200,14 +200,16 @@ ul{margin:0;padding:0;list-style:none;}
     linear-gradient(rgba(223,37,49,0.07) 1px, transparent 1px),
     linear-gradient(90deg, rgba(223,37,49,0.07) 1px, transparent 1px);
   background-size:52px 52px;
-  mask-image:radial-gradient(ellipse 95% 85% at 50% 40%, #000 0%, rgba(0,0,0,0.35) 70%, transparent 100%);
-  -webkit-mask-image:radial-gradient(ellipse 95% 85% at 50% 40%, #000 0%, rgba(0,0,0,0.35) 70%, transparent 100%);
+  /* fade only at the very top & bottom edges so the grid fills the whole height */
+  mask-image:linear-gradient(180deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image:linear-gradient(180deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
 }
 .section.glow-grid::after{
   content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
   background:
-    radial-gradient(120% 70% at 50% -5%, rgba(223,37,49,0.18), transparent 55%),
-    radial-gradient(90% 60% at 80% 110%, rgba(223,37,49,0.10), transparent 55%);
+    radial-gradient(700px 500px at 50% 0%, rgba(223,37,49,0.16), transparent 70%),
+    radial-gradient(600px 500px at 85% 55%, rgba(223,37,49,0.10), transparent 70%),
+    radial-gradient(600px 500px at 15% 100%, rgba(223,37,49,0.10), transparent 70%);
 }
 
 /* ===== About — subtle red fade in from the top ===== */
