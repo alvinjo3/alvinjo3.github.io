@@ -144,12 +144,40 @@ ul{margin:0;padding:0;list-style:none;}
 @keyframes scrollDot{ 0%,100%{transform:translateY(0);opacity:1;} 50%{transform:translateY(10px);opacity:0;} }
 
 /* ===== Section shell ===== */
-.section{ width:100%; border-top:1px solid var(--d-border); position:relative; }
-.section-inner{ max-width:var(--maxw); margin:0 auto; padding:80px 24px; }
+.section{ width:100%; border-top:1px solid var(--d-border); position:relative; overflow:hidden; }
+.section-inner{ max-width:var(--maxw); margin:0 auto; padding:80px 24px; position:relative; z-index:1; }
 .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:14px; }
 .section-head .tag{ color:var(--red); font-size:13px; }
 .section-head h2{ font-size:clamp(2.05rem, 3.6vw, 2.85rem); }
 .section-sub{ color:var(--d-soft); max-width:62ch; margin-top:10px; margin-bottom:38px; font-size:17.5px; }
+
+/* ===== Ambient red blobs — decorative, behind content, on select sections ===== */
+.section.glow::before,
+.section.glow::after{
+  content:''; position:absolute; border-radius:50%; pointer-events:none; z-index:0;
+  filter:blur(80px);
+}
+/* primary blob, top-right */
+.section.glow::before{
+  width:460px; height:460px; top:-140px; right:-120px;
+  background:radial-gradient(circle, rgba(223,37,49,0.20), transparent 70%);
+}
+/* secondary blob, bottom-left, smaller & fainter */
+.section.glow::after{
+  width:360px; height:360px; bottom:-120px; left:-110px;
+  background:radial-gradient(circle, rgba(223,37,49,0.10), transparent 70%);
+}
+/* alternate the sides on every other glow section for variety */
+.section.glow.glow-alt::before{ right:auto; left:-120px; }
+.section.glow.glow-alt::after{ left:auto; right:-110px; }
+@media (prefers-reduced-motion: no-preference){
+  .section.glow::before{ animation:blobDrift 18s ease-in-out infinite alternate; }
+  .section.glow::after{ animation:blobDrift 22s ease-in-out infinite alternate-reverse; }
+}
+@keyframes blobDrift{
+  0%{ transform:translate(0,0) scale(1); }
+  100%{ transform:translate(30px,26px) scale(1.12); }
+}
 
 /* ===== About — subtle red fade in from the top ===== */
 #about{
