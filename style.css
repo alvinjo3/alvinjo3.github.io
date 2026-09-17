@@ -6,26 +6,28 @@
    ============================================================ */
 
 :root{
-  --black:#0a0a0c;
-  --black-2:#101014;      /* slightly raised surface on dark */
-  --red:#e5484d;
-  --red-deep:#2c0709;     /* very dark red for fades */
-  --white:#f6f6f7;
+  --black:#000000;
+  --black-2:#0d0d0f;      /* slightly raised surface on dark */
+  --red:#df2531;
+  --red-45:rgba(223,37,49,0.45);   /* palette tier: 45% */
+  --red-65:rgba(223,37,49,0.65);   /* palette tier: 65% */
+  --red-deep:#2a0608;     /* very dark red for fades */
+  --white:#ffffff;
 
   /* text on DARK backgrounds */
-  --d-strong:#f6f6f7;
-  --d-soft:rgba(246,246,247,0.66);
-  --d-faint:rgba(246,246,247,0.40);
-  --d-border:rgba(246,246,247,0.14);
+  --d-strong:#ffffff;
+  --d-soft:rgba(255,255,255,0.66);
+  --d-faint:rgba(255,255,255,0.40);
+  --d-border:rgba(255,255,255,0.14);
 
   /* text on LIGHT (white/red) backgrounds */
-  --l-strong:#0a0a0c;
-  --l-soft:rgba(10,10,12,0.66);
-  --l-faint:rgba(10,10,12,0.42);
-  --l-border:rgba(10,10,12,0.14);
+  --l-strong:#000000;
+  --l-soft:rgba(0,0,0,0.66);
+  --l-faint:rgba(0,0,0,0.42);
+  --l-border:rgba(0,0,0,0.14);
 
-  --red-dim:rgba(229,72,77,0.12);
-  --red-line:rgba(229,72,77,0.45);
+  --red-dim:rgba(223,37,49,0.12);
+  --red-line:rgba(223,37,49,0.45);
 
   --serif: 'Space Grotesk', sans-serif;
   --sans: 'Inter', sans-serif;
@@ -110,8 +112,8 @@ ul{margin:0;padding:0;list-style:none;}
   min-height:100vh; display:flex; flex-direction:column; justify-content:center;
   padding:130px 24px 60px; position:relative;
   background:
-    radial-gradient(1200px circle at 80% -20%, rgba(229,72,77,0.25), transparent 55%),
-    linear-gradient(180deg, #5a1216 0%, var(--red-deep) 22%, rgba(44,7,9,0.55) 38%, var(--black) 50%);
+    radial-gradient(1200px circle at 80% -20%, rgba(223,37,49,0.28), transparent 55%),
+    linear-gradient(180deg, var(--red) 0%, var(--red-65) 14%, var(--red-45) 26%, var(--red-deep) 40%, var(--black) 52%);
 }
 .hero-grid{ max-width:var(--maxw); margin:0 auto; width:100%; display:grid; grid-template-columns:1.3fr 1fr; gap:60px; align-items:center; }
 .hero-tag{ color:var(--red); font-size:13px; margin-bottom:18px; letter-spacing:.02em; }
@@ -177,17 +179,17 @@ ul{margin:0;padding:0;list-style:none;}
 
 /* ===== Honors — bold red band, black→red→black ===== */
 #honors{
-  background:linear-gradient(180deg, var(--black) 0%, var(--red-deep) 20%, #3d0a0d 50%, var(--red-deep) 80%, var(--black) 100%);
+  background:linear-gradient(180deg, var(--black) 0%, var(--red-deep) 18%, var(--red-45) 50%, var(--red-deep) 82%, var(--black) 100%);
   border-top-color:transparent;
 }
 #honors .section-head .tag{ color:var(--white); }
 .honors-row{ display:flex; flex-wrap:wrap; gap:16px; margin-top:32px; }
-.honor-chip{ flex:1 1 300px; border:1px solid rgba(246,246,247,0.22); border-radius:6px; padding:24px 28px; background:rgba(255,255,255,0.06); transition:border-color .2s ease, transform .2s ease, background .2s ease; }
+.honor-chip{ flex:1 1 300px; border:1px solid rgba(255,255,255,0.22); border-radius:6px; padding:24px 28px; background:rgba(255,255,255,0.06); transition:border-color .2s ease, transform .2s ease, background .2s ease; }
 .honor-chip:hover{ border-color:var(--white); background:rgba(255,255,255,0.1); transform:translateY(-3px); }
 .honor-title{ color:var(--d-strong); font-size:18px; font-weight:600; margin-bottom:2px; font-family:var(--serif); }
 .honor-dept{ color:var(--d-strong); font-size:14.5px; margin-bottom:4px; }
-.honor-meta{ color:rgba(246,246,247,0.72); font-size:13px; margin-bottom:12px; }
-.honor-desc{ color:rgba(246,246,247,0.82); font-size:14.5px; line-height:1.55; }
+.honor-meta{ color:rgba(255,255,255,0.72); font-size:13px; margin-bottom:12px; }
+.honor-desc{ color:rgba(255,255,255,0.82); font-size:14.5px; line-height:1.55; }
 
 /* ===== Experience ===== */
 .company-head{ display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:34px; padding-bottom:22px; border-bottom:1px solid var(--d-border); }
@@ -212,7 +214,7 @@ ul{margin:0;padding:0;list-style:none;}
   background:var(--black-2); border:1px solid var(--d-border); border-radius:6px; padding:30px;
   transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
-.project-card:hover{ border-color:var(--red-line); transform:translateY(-4px); box-shadow:0 20px 40px -22px rgba(229,72,77,0.28); }
+.project-card:hover{ border-color:var(--red-line); transform:translateY(-4px); box-shadow:0 20px 40px -22px rgba(223,37,49,0.32); }
 .project-featured{ grid-column:1 / -1; }
 .project-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
 .project-top p{ color:var(--red); font-size:13px; }
@@ -228,7 +230,7 @@ ul{margin:0;padding:0;list-style:none;}
 /* ===== Certifications ===== */
 .cert-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:32px; }
 .cert-card{ display:flex; flex-direction:column; border:1px solid var(--d-border); border-radius:6px; padding:26px 22px; background:var(--black-2); transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease; }
-.cert-card:hover{ border-color:var(--red-line); transform:translateY(-4px); box-shadow:0 20px 40px -22px rgba(229,72,77,0.28); }
+.cert-card:hover{ border-color:var(--red-line); transform:translateY(-4px); box-shadow:0 20px 40px -22px rgba(223,37,49,0.32); }
 .cert-badge-img{ width:56px; height:56px; object-fit:contain; margin-bottom:16px; filter:grayscale(100%) contrast(1.05) brightness(1.05); transition:filter .4s ease, transform .3s ease; color:var(--d-strong); }
 .cert-badge-lg{ width:76px; height:76px; }
 .cert-card:hover .cert-badge-img{ filter:grayscale(0%); transform:scale(1.05); }
