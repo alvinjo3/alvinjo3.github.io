@@ -116,7 +116,7 @@ ul{margin:0;padding:0;list-style:none;}
     linear-gradient(180deg, var(--red) 0%, var(--red-65) 14%, var(--red-45) 26%, var(--red-deep) 40%, var(--black) 52%);
 }
 .hero-grid{ max-width:var(--maxw); margin:0 auto; width:100%; display:grid; grid-template-columns:1.3fr 1fr; gap:60px; align-items:start; }
-.hero-side{ margin-top:96px; }
+.hero-side{ margin-top:150px; }
 .hero-tag{ color:var(--red); font-size:13px; margin-bottom:18px; letter-spacing:.02em; }
 .hero-name{ font-size:clamp(3.1rem, 7vw, 5.4rem); line-height:1.02; min-height:1.1em; white-space:pre-wrap; }
 .hero-name .tcursor{ color:var(--red); animation:blink 1s step-end infinite; }
